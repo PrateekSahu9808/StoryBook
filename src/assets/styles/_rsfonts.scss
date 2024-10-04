@@ -1,0 +1,228 @@
+@mixin fontPoppins($family: Poppins-Regular, $size: 16px) {
+  font-family: $family !important;
+  font-size: $size !important;
+}
+@mixin fontMontserrat(
+  $family: 'Montserrat-Medium',
+  $secondFamily: sans-serif,
+  $size: 10px
+) {
+  font-family: $family, $secondFamily !important;
+  font-size: $size !important;
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium', sans-serif;
+  src:
+    local('Montserrat-Medium'),
+    url(../../fonts/Montserrat/Montserrat-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat-SemiBold', sans-serif;
+  src:
+    local('Montserrat-SemiBold'),
+    url(../../fonts/Montserrat/Montserrat-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins-Regular';
+  src:
+    local('Poppins-Regular'),
+    url(../../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  src:
+    local('Poppins-Medium'),
+    url(../../fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src:
+    local('Poppins-SemiBold'),
+    url(../../fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src:
+    local('Poppins-Bold'),
+    url(../../fonts/Poppins/Poppins-Bold.ttf) format('truetype');
+}
+
+//Regular Start
+
+.fontPoppinsRegularXLg {
+  @include fontPoppins(Poppins-Regular, 18px);
+}
+
+.fontPoppinsRegularLg {
+  @include fontPoppins(Poppins-Regular, 16px);
+}
+
+.fontPoppinsRegularMd {
+  @include fontPoppins(Poppins-Regular, 14px);
+}
+
+.fontPoppinsRegularSm {
+  @include fontPoppins(Poppins-Regular, 12px);
+}
+
+.fontPoppinsRegularXs {
+  @include fontPoppins(Poppins-Regular, 10px);
+}
+
+.fontPoppinsRegularXs8px {
+  @include fontPoppins(Poppins-Regular, 8px);
+}
+.fontPoppinsRegularXs9px {
+  @include fontPoppins(Poppins-Regular, 9px);
+}
+
+//Regular End
+
+//Medium Start
+
+// Poppins font
+.fontPoppinsMediumPageSubHeader {
+  @include fontPoppins(Poppins-Medium, 26px);
+}
+.fontPoppinsMediumXX2 {
+  @include fontPoppins(Poppins-Medium, 22px);
+}
+
+.fontPoppinsMediumXXlg {
+  @include fontPoppins(Poppins-Medium, 20px);
+}
+
+.fontPoppinsMediumXXlg {
+  @include fontPoppins(Poppins-Medium, 20px);
+}
+
+.fontPoppinsMediumLg {
+  @include fontPoppins(Poppins-Medium, 16px);
+}
+
+.fontPoppinsMediumMd {
+  @include fontPoppins(Poppins-Medium, 14px);
+}
+
+.fontPoppinsMediumSm {
+  @include fontPoppins(Poppins-Medium, 12px);
+}
+.fontPoppinsMediumSm11 {
+  @include fontPoppins(Poppins-Medium, 11px);
+}
+
+.fontPoppinsMediumXs {
+  @include fontPoppins(Poppins-Medium, 10px);
+}
+.fontPoppinsMediumXs8px {
+  @include fontPoppins(Poppins-Medium, 8px);
+}
+
+.fontPoppinsMediumXs8px {
+  @include fontPoppins(Poppins-Medium, 8px);
+}
+
+//Medium End
+
+//SemiBold Start
+
+.fontPoppinsSemibold-size-50 {
+  @include fontPoppins(Poppins-SemiBold, 50px);
+}
+
+.fontPoppinsSemibold-size-42 {
+  @include fontPoppins(Poppins-SemiBold, 42px);
+}
+
+.fontPoppinsSemiboldPageHeader {
+  @include fontPoppins(Poppins-SemiBold, 36px);
+}
+
+.fontPoppinsSemiboldAlertHeader {
+  @include fontPoppins(Poppins-SemiBold, 32px);
+}
+
+.fontPoppinsSemibold-size-28 {
+  @include fontPoppins(Poppins-SemiBold, 28px);
+}
+
+.fontPoppinsSemibold-size-26 {
+  @include fontPoppins(Poppins-SemiBold, 26px);
+}
+
+.fontPoppinsSemiboldPageSubHeader {
+  @include fontPoppins(Poppins-SemiBold, 24px);
+}
+.fontPoppinsSemiboldXX2 {
+  @include fontPoppins(Poppins-SemiBold, 22px);
+}
+.fontPoppinsSemiboldXXlg {
+  @include fontPoppins(Poppins-SemiBold, 20px);
+}
+
+.fontPoppinsSemiboldXlg {
+  @include fontPoppins(Poppins-SemiBold, 18px);
+}
+
+.fontPoppinsSemiboldLg {
+  @include fontPoppins(Poppins-SemiBold, 16px);
+}
+
+.fontPoppinsSemiboldMd {
+  @include fontPoppins(Poppins-SemiBold, 14px);
+}
+
+.fontPoppinsSemiboldSm {
+  @include fontPoppins(Poppins-SemiBold, 12px);
+}
+.fontPoppinsSemiboldSm11 {
+  @include fontPoppins(Poppins-SemiBold, 11px);
+}
+
+.fontPoppinsSemiboldXs {
+  @include fontPoppins(Poppins-SemiBold, 10px);
+}
+
+.fontPoppinsSemiboldXs9px {
+  @include fontPoppins(Poppins-SemiBold, 9px);
+}
+
+.fontPoppinsSemiboldXs8px {
+  @include fontPoppins(Poppins-Medium, 8px);
+}
+.fontPoppinsSemiboldXXs {
+  @include fontPoppins(Poppins-SemiBold, 8px);
+}
+
+// Montserrat Medium Font
+.fontMontserratMediumXs {
+  @include fontMontserrat(Montserrat-Medium, sans-serif, 10px);
+}
+
+.fontMontserratMediumSm {
+  @include fontMontserrat(Montserrat-Medium, sans-serif, 12px);
+}
+
+.fontMontserratMediumMd {
+  @include fontMontserrat(Montserrat-Medium, sans-serif, 14px);
+}
+
+// Montserrat SemiBold Font
+.fontMontserratSemiboldXs {
+  @include fontMontserrat(Montserrat-SemiBold, sans-serif, 10px);
+}
+
+.fontMontserratSemiboldSm {
+  @include fontMontserrat(Montserrat-SemiBold, sans-serif, 12px);
+}
+
+.fontMontserratSemiboldMd {
+  @include fontMontserrat(Montserrat-SemiBold, sans-serif, 14px);
+}
+.fontMontserratSemiboldLg {
+  @include fontMontserrat(Montserrat-SemiBold, sans-serif, 16px);
+}
