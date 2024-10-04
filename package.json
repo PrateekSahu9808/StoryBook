@@ -1,7 +1,7 @@
 {
   "name": "prateeksahu",
   "description": "This is an open-source React component library ",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
