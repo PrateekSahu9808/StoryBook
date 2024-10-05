@@ -1,10 +1,15 @@
 <h1 align="center">🚀PrateekSahu UI🚀</h1>
 
-  This is an open-source React component library.
+🔥This is an open-source React component library🔥.
+
+## Screenshot
+
+![Screenshot](./Screenshot%20(207).png)
+
 
 ## Installation
 
-Install the package in your project directory with:
+😍Install the package in your project directory with 😍:
  
 ```bash
  npm i prateeksahu
@@ -17,7 +22,6 @@ Install the package in your project directory with:
 ## Example
 
 ```bash
-npm i prateeksahu
 
 ...
 import { RadialChart } from 'prateeksahu'
