@@ -11,6 +11,9 @@ yarn-error.log*
 pnpm-debug.log*
 build-storybook.log*
 
+# Ignore Storybook static build output
+storybook-static/
+
 # macOS-specific files
 .DS_Store
 
