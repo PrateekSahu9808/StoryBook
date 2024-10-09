@@ -1,0 +1,71 @@
+// DonutChart.scss
+.chart-section {
+    display: flex;
+    width: 570px;
+    height: 232px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #434db8ed;
+  }
+  
+  .chart-container {
+    position: relative;
+    width: 270px;
+    height: 300px;
+  }
+  
+  .donut-chart {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .donut-chart-background {
+    fill: none;
+    stroke: #ecedf8;
+    stroke-width: 20;
+  }
+  
+  .status-container {
+    width: 289px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .status-label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .status-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  
+  .highlighted {
+    stroke-width: 24px;
+    stroke-opacity: 1;
+  }
+  
+  .percentage-display {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: 500;
+    color: #434db8;
+    background: #ecedf8;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  
