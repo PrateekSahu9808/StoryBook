@@ -1,4 +1,4 @@
-<h1 align="center">🚀PrateekSahu UI🚀</h1>
+<h1 align="center">🚀React Charts🚀</h1>
 
 🔥This is an open-source React component library🔥.
 
@@ -12,7 +12,7 @@
 😍Install the package in your project directory with 😍:
  
 ```bash
- npm i prateeksahu
+npm i react-jschart
 
 ```
 
