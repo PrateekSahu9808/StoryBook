@@ -1,9 +1,6 @@
 import RadialChart from './components/Charts/RadialChart';
-// Utils imports
-import { checkEmpty } from './utils/checkEmpty/checkEmpty';
-
+import DonutChart from './components/Charts/DonutChart';
 export {
   RadialChart,
-  // utils exports
-  checkEmpty,
+  DonutChart,
 };

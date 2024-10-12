@@ -1,37 +1,3 @@
-// import { Meta, StoryObj } from '@storybook/react';
-// import RadialChart from './RadialChart';
-
-// const meta: Meta<typeof RadialChart> = {
-//   title: 'Components/RadialChart',
-//   component: RadialChart,
-//   argTypes: {
-//     radius: { control: 'number' },
-//     lineWidth: { control: 'number' },
-//     statusValues: { control: 'object' },
-//     onClick: { action: 'clicked' },
-//   },
-//   parameters: {
-//     layout: 'centered',
-//   },
-// };
-
-// export default meta;
-// type Story = StoryObj<typeof RadialChart>;
-
-// export const ChartWithStatus: Story = {
-//   args: {
-//     radius: 15,
-//     lineWidth: 5,
-//     statusValues: [
-//       { status: 'Passed', value: 40 },
-//       { status: 'Failed', value: 20 },
-//       { status: 'Warning', value: 20 },
-//       { status: 'Skipped', value: 20 },
-//     ],
-//     onClick: (status: string) => alert(`Status clicked: ${status}`),
-//   },
-// };
-
 import { Meta, StoryObj } from '@storybook/react';
 import RadialChart from './RadialChart';
 
@@ -59,7 +25,7 @@ export const DefaultChart: Story = {
     lineCap: {
       control: {
         type: 'radio',
-        options: ['butt', 'square'],
+        options: ['square', 'round'],
       },
     },
     onClick: { action: 'clicked' },
@@ -86,7 +52,7 @@ export const ChartWithStatus: Story = {
     onClick: { action: 'clicked' },
   },
   args: {
-    radius: 15,
+    radius: 20,
     lineWidth: 5,
     statusValues: [
       { status: 'Passed', value: 40 },
@@ -94,9 +60,6 @@ export const ChartWithStatus: Story = {
       { status: 'Warning', value: 20 },
       { status: 'Skipped', value: 20 },
     ],
-    onClick: () =>{},
+    onClick: () => {},
   },
 };
-
-
-
