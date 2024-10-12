@@ -19,4 +19,5 @@ export type DonutChartProps = {
   statusValues: StatusValue[];
   legendDetailsType: string;
   gapAngle?: number;
+  isLegendEnabled: boolean;
 };

@@ -18,6 +18,7 @@ export const Default: Story = {
     radius: 60,
     lineWidth: 15,
     legendDetailsType: 'Scripts',
+    isLegendEnabled:true,
     statusValues: [
       { status: 'Passed', value: 25 },
       { status: 'failed', value: 25 },

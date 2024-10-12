@@ -1,16 +1,15 @@
 .radial-chart-container {
-    display: flex;
-    gap: 25px;
-  
-    .radial-chart {
-      display: inline-block;
-      cursor: pointer; // Change cursor to pointer on hover
-  
-      .radial-chart-text {
-        font-size: 8px;
-        font-weight: 400;
-        text-anchor: middle;
-      }
+  display: flex;
+  gap: 25px;
+
+  .radial-chart {
+    display: inline-block;
+    cursor: pointer; // Change cursor to pointer on hover
+
+    .radial-chart-text {
+      font-size: 8px;
+      font-weight: 400;
+      text-anchor: middle;
     }
   }
-  
+}

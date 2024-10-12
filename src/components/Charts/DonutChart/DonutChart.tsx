@@ -44,6 +44,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
   statusValues = [],
   gapAngle = 0.06,
   legendDetailsType,
+  isLegendEnabled=true
 }) => {
   const [hoveredStatus, setHoveredStatus] = useState<Status | null>(null);
   const { colorMapping, hoverMapping } = useColorMappings();
@@ -212,7 +213,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
           </g>
         </svg>
       </div>
-      <div className="ff-status-container">
+      {isLegendEnabled &&<div className="ff-status-container">
         <div
           className={`ff-status-item ${
             hoveredStatus === null || hoveredStatus === 'passed'
@@ -349,7 +350,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
