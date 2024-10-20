@@ -1,7 +1,8 @@
 {
-  "name": "prateeksahu",
-  "description": "This is an open-source React component library ",
-  "version": "1.0.8",
+  "name": "react-jschart",
+  "description": "An open-source React component library for creating charts.",
+  "keywords": ["react", "charts","chartjs" ,"visualization","radialchart"],
+  "version": "1.0.11",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
