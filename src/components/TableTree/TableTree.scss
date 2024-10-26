@@ -1,181 +1,132 @@
-// .tree-container {
-//   width: 100%;
-//   font-size: 12px;
-//   color: #71347B;
-
-//   table {
-//     border-collapse: collapse;
-//     width: 100%;
-//     text-align: left;
-//   }
-
-//   th {
-//     background-color: #f0e7f4;
-//     color: #252c37;
-//     font-weight: 600;
-//     padding: 8px;
-  
-//   }
-
-//   th, td {
-//     padding: 10px;
-//     vertical-align: top;
-//       // border: 1px solid red;
-//   }
-
-//   .title-container {
-//     display: flex;
-//     align-items: center;
-//     position: relative;
-
-//     .folder {
-//       display: flex;
-//     }
-
-//     .title {
-//       white-space: nowrap;
-//       overflow: hidden;
-//       text-overflow: ellipsis;
-//       font-weight: 400;
-//     }
-//   }
-
-//   .node-li {
-//     position: relative;
-//     --indent-size: 20px;
-//     --node-height: 20px; // Base height for each node
-
-//     td:first-child {
-//       padding-left: calc(var(--level) * var(--indent-size));
-//     }
-
-//     // Vertical line for connection from parent to children
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: calc(var(--level) * var(--indent-size) - 10px);
-//       width: 1px;
-//       height: calc((var(--total-height)) * var(--node-height)); // Adjusted to ensure no gap
-//       background-color: #D7B5E3;
-//       z-index: 1;
-//     }
-
-//     // Horizontal line connecting child node to parent
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       top: 50%;
-//       left: calc(var(--level) * var(--indent-size) - 10px);
-//       width: 16px;
-//       height: 1px;
-//       background-color: #D7B5E3;
-//       z-index: 1;
-//     }
-
-//     // If node has children, extend vertical line fully
-//     &.has-children::before {
-//       height: calc((var(--total-height)) * var(--node-height)); // Ensure it covers total height
-//     }
-
-//     // For the last child node, limit the vertical line
-//     &.is-last::before {
-//       height: calc(var(--node-height) / 2); // Shorten the vertical line for the last child
-//     }
-
-//     // Remove lines for root level
-//     &[style*="--level: 0"] {
-//       &::before,
-//       &::after {
-//         content: none;
-//       }
-//     }
-//   }
-// }
-
-
-.tree-container {
+.ff-tree-container {
   width: 100%;
   font-size: 12px;
-  color: #71347b;
+  color: #71347b,;
   transition: all 0.3s ease;
-  
 
   table {
     border-collapse: collapse;
     width: 100%;
     text-align: left;
-    
   }
 
-  th {
-    background-color: #f0e7f4;
-    color: #252c37;
-    font-weight: 600;
-  }
+  .ff-toggle-arrow-icon {
+    height: 12px;
+    width: 12px;
+    margin-left: 8px;
+    display: grid;
+    place-items: center;
+    transform: rotate(0deg);
 
-  th, td {
-    padding: 8px;
-    vertical-align: top;
-  }
-
-  .title-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    .folder {
-      display: flex;
+    svg {
+      path {
+        fill: #71347b,;
+      }
     }
 
-    .title {
+    &.ff-expanded {
+      transform: rotate(0deg);
+    }
+
+    &.ff-collapsed {
+      transform: rotate(-90deg);
+    }
+  }
+
+  th,
+  td {
+    padding: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  th {
+    vertical-align: middle;
+    height: 32px;
+    background-color:#efe1f9;
+    color:black;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  tr:hover {
+    background-color: #d1d1d1;
+  }
+
+  .ff-title-container {
+    display: flex;
+    align-items: center;
+
+    .ff-toggle-folder {
+      display: flex;
+    }
+    &.ff-folder {
+      font-weight: 600;
+    }
+
+    &.ff-file {
+      font-weight: 400;
+    }
+    .ff-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 400;
+      cursor: pointer;
     }
   }
 
-  .node-li {
-    
+  .ff-action-container {
+    display: none;
+  }
+
+  .ff-node-li:hover .ff-action-container {
+    display: flex;
+  }
+
+  .ff-node-li {
     position: relative;
-    --indent-size: 20px;
-    --node-height: 20px;
+    --indent-size: 17px;
     --total-children-height: var(--node-height);
-    transition: height 0.3s ease;
 
     td:first-child {
       padding-left: calc(var(--level) * var(--indent-size));
+      height: 32px;
     }
 
     // Vertical line connecting the node to the parent
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: calc(var(--level) * var(--indent-size) - 4px);
       width: 1px;
-      height: calc(var(--total-children-height)); // Adjusted for total height with children
+      height: calc(var(--total-children-height));
       background-color: #d7b5e3;
+      z-index: 1;
     }
 
     // Horizontal line connecting child node to parent
     &::after {
-      content: "";
+      content: '';
       position: absolute;
-      top: 50%;
+      top: 48%;
       left: calc(var(--level) * var(--indent-size) - 4px);
       width: 12px;
       height: 1px;
       background-color: #d7b5e3;
+      z-index: 1;
     }
 
     // For the last child node, limit the vertical line
-    &.is-last::before {
-      height: calc(var(--node-height) / 2); 
+    &.ff-is-last::before {
+      height: calc(var(--node-height) / 2);
     }
 
-    // Remove lines for root level
+    // Remove the  lines for root level
     &[style*='--level: 0']::before,
     &[style*='--level: 0']::after {
       content: none;
