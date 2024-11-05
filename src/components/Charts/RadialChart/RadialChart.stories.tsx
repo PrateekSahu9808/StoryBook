@@ -43,7 +43,33 @@ export const DefaultChart: Story = {
     onClick: () => {},
   },
 };
-
+export const RadialBarChart:Story={
+  argTypes: {
+    barValues: { control: 'object' },
+    radius: { control: 'number' },
+    lineWidth: { control: 'number' },
+    animate: { control: 'boolean' },
+    labelHeading:{control:'text'},
+    lineCap: {
+      control: {
+        type: 'radio',
+        options: ['square', 'round'],
+      },
+    },
+  },
+  args:{
+  radius:50,
+  lineWidth:10,
+  labelHeading:'Total Memory',
+  barValues:[
+    {value:10 ,arcColor: '#3B82F6', arcBackgroundColor: '#DBEAFE',barLabel:'Available Memory'},
+    {value:20 , arcColor: '#10B981', arcBackgroundColor: '#D1FAE5',barLabel:'Assigned Memory' },
+    {value:30 ,arcColor: '#F59E0B', arcBackgroundColor: '#FEF3C7',barLabel:'usedMemory'},
+ 
+  ],
+  lineCap: 'round',
+}
+}
 export const ChartWithStatus: Story = {
   argTypes: {
     radius: { control: 'number' },

@@ -47,9 +47,11 @@ const RadialChart: React.FC<RadialChartProps> = ({
   animate,
   label,
   lineCap,
+  barValues,
+  labelHeading,
 }) => {
   const [animatedValue, setAnimatedValue] = useState(0);
-
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   useEffect(() => {
     if (animate) {
       const increment = total / 100;
@@ -215,7 +217,110 @@ const RadialChart: React.FC<RadialChartProps> = ({
         }
       </>
     );
+  } else if (barValues.length) {
+    const totalBarValue = barValues.reduce(
+      (acc, status) => acc + status.value,
+      0
+    );
+    const baseRadius = radius;
+    const radiusIncrement = lineWidth + 10;
+    const maxRadius = baseRadius + radiusIncrement * (barValues.length - 1);
+    const svgSize = 2 * (maxRadius + lineWidth);
+
+    // Reverse the array to render inner circles on top
+    const reversedBarValues = [...barValues].reverse();
+    return (
+      <div className="relative" style={{ width: svgSize, height: svgSize }}>
+        <svg
+          width={svgSize}
+          height={svgSize}
+          viewBox={`0 0 ${svgSize} ${svgSize}`}
+          className="absolute top-0 left-0"
+        >
+          <g transform={`translate(${svgSize / 2}, ${svgSize / 2})`}>
+            {reversedBarValues.map((values, i) => {
+              const originalIndex = barValues.length - 1 - i;
+              const percentage = values.value / totalBarValue;
+              const angleIncrement = percentage * 2 * Math.PI;
+              let startAngle = -Math.PI / 2;
+              let endAngle = startAngle + angleIncrement;
+
+              if (values.value === totalBarValue) {
+                startAngle = 0;
+                endAngle = 2 * Math.PI;
+              }
+
+              const currentRadius =
+                baseRadius + radiusIncrement * originalIndex;
+              const backGroundArcPath = calculateArc(
+                0,
+                0,
+                currentRadius,
+                0,
+                2 * Math.PI
+              );
+              const foregroundArcPath = calculateArc(
+                0,
+                0,
+                currentRadius,
+                startAngle,
+                endAngle
+              );
+
+              return (
+                <g key={originalIndex}>
+                  {/* Background Arc */}
+                  <path
+                    d={backGroundArcPath}
+                    fill="none"
+                    stroke={values.arcBackgroundColor}
+                    strokeWidth={lineWidth}
+                    className="transition-all duration-300"
+                  />
+
+                  {/* Visible arc with hover interaction */}
+                  <path
+                    d={foregroundArcPath}
+                    fill="none"
+                    stroke={values.arcColor}
+                    strokeWidth={lineWidth}
+                    strokeLinecap={lineCap === 'square' ? 'butt' : 'round'}
+                    onMouseEnter={() => setHoveredIndex(originalIndex)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    style={{
+                      pointerEvents: 'stroke',
+                    }}
+                  />
+                </g>
+              );
+            })}
+
+            {/* Central text */}
+            <text
+              x="0"
+              y="0"
+              fill={
+                hoveredIndex !== null
+                  ? barValues[hoveredIndex]?.arcColor
+                  : '#374151'
+              }
+              textAnchor="middle"
+              dominantBaseline="central"
+              className="text-2xl font-bold transition-all duration-300"
+            >
+              {hoveredIndex !== null
+                ? barValues[hoveredIndex]?.value
+                : totalBarValue}
+              {hoveredIndex !== null
+                ? `GB${barValues[hoveredIndex]?.barLabel}`
+                : `GB${labelHeading}`}
+            </text>
+          </g>
+        </svg>
+      </div>
+    );
   }
+
   return;
 };
 
